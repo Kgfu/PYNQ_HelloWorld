@@ -1,0 +1,145 @@
+
+
+================================================================
+== Vitis HLS Report for 'colorthresholding_9_0_3_2160_3840_1_entry28'
+================================================================
+* Date:           Wed Feb 23 11:16:25 2022
+
+* Version:        2020.2.2 (Build 3118627 on Tue Feb  9 05:13:49 MST 2021)
+* Project:        colordetect
+* Solution:       colordetect (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.802 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      1|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     54|    -|
+|Register         |        -|    -|       3|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|       3|     55|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   1|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   1|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------+----+-----------+-----+-----------+
+    |           Name           | LUT| Input Size| Bits| Total Bits|
+    +--------------------------+----+-----------+-----+-----------+
+    |ap_done                   |   9|          2|    1|          2|
+    |p_src_mat_cols_blk_n      |   9|          2|    1|          2|
+    |p_src_mat_cols_out_blk_n  |   9|          2|    1|          2|
+    |p_src_mat_rows_blk_n      |   9|          2|    1|          2|
+    |p_src_mat_rows_out_blk_n  |   9|          2|    1|          2|
+    |real_start                |   9|          2|    1|          2|
+    +--------------------------+----+-----------+-----+-----------+
+    |Total                     |  54|         12|    6|         12|
+    +--------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------+---+----+-----+-----------+
+    |      Name      | FF| LUT| Bits| Const Bits|
+    +----------------+---+----+-----+-----------+
+    |ap_CS_fsm       |  1|   0|    1|          0|
+    |ap_done_reg     |  1|   0|    1|          0|
+    |start_once_reg  |  1|   0|    1|          0|
+    +----------------+---+----+-----+-----------+
+    |Total           |  3|   0|    3|          0|
+    +----------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+---------------------------------------------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  |                   Source Object                   |    C Type    |
++---------------------------+-----+-----+------------+---------------------------------------------------+--------------+
+|ap_clk                     |   in|    1|  ap_ctrl_hs|  colorthresholding<9, 0, 3, 2160, 3840, 1>.entry28|  return value|
+|ap_rst                     |   in|    1|  ap_ctrl_hs|  colorthresholding<9, 0, 3, 2160, 3840, 1>.entry28|  return value|
+|ap_start                   |   in|    1|  ap_ctrl_hs|  colorthresholding<9, 0, 3, 2160, 3840, 1>.entry28|  return value|
+|start_full_n               |   in|    1|  ap_ctrl_hs|  colorthresholding<9, 0, 3, 2160, 3840, 1>.entry28|  return value|
+|ap_done                    |  out|    1|  ap_ctrl_hs|  colorthresholding<9, 0, 3, 2160, 3840, 1>.entry28|  return value|
+|ap_continue                |   in|    1|  ap_ctrl_hs|  colorthresholding<9, 0, 3, 2160, 3840, 1>.entry28|  return value|
+|ap_idle                    |  out|    1|  ap_ctrl_hs|  colorthresholding<9, 0, 3, 2160, 3840, 1>.entry28|  return value|
+|ap_ready                   |  out|    1|  ap_ctrl_hs|  colorthresholding<9, 0, 3, 2160, 3840, 1>.entry28|  return value|
+|start_out                  |  out|    1|  ap_ctrl_hs|  colorthresholding<9, 0, 3, 2160, 3840, 1>.entry28|  return value|
+|start_write                |  out|    1|  ap_ctrl_hs|  colorthresholding<9, 0, 3, 2160, 3840, 1>.entry28|  return value|
+|p_src_mat_rows_dout        |   in|   32|     ap_fifo|                                     p_src_mat_rows|       pointer|
+|p_src_mat_rows_empty_n     |   in|    1|     ap_fifo|                                     p_src_mat_rows|       pointer|
+|p_src_mat_rows_read        |  out|    1|     ap_fifo|                                     p_src_mat_rows|       pointer|
+|p_src_mat_cols_dout        |   in|   32|     ap_fifo|                                     p_src_mat_cols|       pointer|
+|p_src_mat_cols_empty_n     |   in|    1|     ap_fifo|                                     p_src_mat_cols|       pointer|
+|p_src_mat_cols_read        |  out|    1|     ap_fifo|                                     p_src_mat_cols|       pointer|
+|p_src_mat_rows_out_din     |  out|   16|     ap_fifo|                                 p_src_mat_rows_out|       pointer|
+|p_src_mat_rows_out_full_n  |   in|    1|     ap_fifo|                                 p_src_mat_rows_out|       pointer|
+|p_src_mat_rows_out_write   |  out|    1|     ap_fifo|                                 p_src_mat_rows_out|       pointer|
+|p_src_mat_cols_out_din     |  out|   16|     ap_fifo|                                 p_src_mat_cols_out|       pointer|
+|p_src_mat_cols_out_full_n  |   in|    1|     ap_fifo|                                 p_src_mat_cols_out|       pointer|
+|p_src_mat_cols_out_write   |  out|    1|     ap_fifo|                                 p_src_mat_cols_out|       pointer|
++---------------------------+-----+-----+------------+---------------------------------------------------+--------------+
+

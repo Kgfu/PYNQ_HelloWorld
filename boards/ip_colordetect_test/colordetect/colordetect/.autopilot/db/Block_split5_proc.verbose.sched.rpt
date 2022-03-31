@@ -1,0 +1,128 @@
+
+
+================================================================
+== Vitis HLS Report for 'Block_split5_proc'
+================================================================
+* Date:           Wed Feb 23 11:16:20 2022
+
+* Version:        2020.2.2 (Build 3118627 on Tue Feb  9 05:13:49 MST 2021)
+* Project:        colordetect
+* Solution:       colordetect (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.367 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        1|        1|  10.000 ns|  10.000 ns|    1|    1|     none|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.36>
+ST_1 : Operation 3 [1/1] (3.40ns)   --->   "%t1_read = read i32 @_ssdm_op_Read.ap_fifo.i32P0A, i32 %t1" [src/xf_colordetect_accel_stream.cpp:210]   --->   Operation 3 'read' 't1_read' <Predicate = true> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_1 : Operation 4 [1/1] (1.96ns)   --->   "%icmp_ln210 = icmp_slt  i32 %t1_read, i32 9" [src/xf_colordetect_accel_stream.cpp:210]   --->   Operation 4 'icmp' 'icmp_ln210' <Predicate = true> <Delay = 1.96> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%idxprom21_i = zext i32 %t1_read" [src/xf_colordetect_accel_stream.cpp:210]   --->   Operation 5 'zext' 'idxprom21_i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%low_t_addr = getelementptr i8 %low_t, i64 0, i64 %idxprom21_i" [src/xf_colordetect_accel_stream.cpp:213]   --->   Operation 6 'getelementptr' 'low_t_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (1.75ns)   --->   "%low_t_load = load i4 %low_t_addr" [src/xf_colordetect_accel_stream.cpp:213]   --->   Operation 7 'load' 'low_t_load' <Predicate = true> <Delay = 1.75> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%high_t_addr = getelementptr i8 %high_t, i64 0, i64 %idxprom21_i" [src/xf_colordetect_accel_stream.cpp:218]   --->   Operation 8 'getelementptr' 'high_t_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [2/2] (1.75ns)   --->   "%high_t_load = load i4 %high_t_addr" [src/xf_colordetect_accel_stream.cpp:218]   --->   Operation 9 'load' 'high_t_load' <Predicate = true> <Delay = 1.75> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+
+State 2 <SV = 1> <Delay = 2.20>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %t1, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/2] (1.75ns)   --->   "%low_t_load = load i4 %low_t_addr" [src/xf_colordetect_accel_stream.cpp:213]   --->   Operation 11 'load' 'low_t_load' <Predicate = true> <Delay = 1.75> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_2 : Operation 12 [1/2] (1.75ns)   --->   "%high_t_load = load i4 %high_t_addr" [src/xf_colordetect_accel_stream.cpp:218]   --->   Operation 12 'load' 'high_t_load' <Predicate = true> <Delay = 1.75> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_2 : Operation 13 [1/1] (0.44ns)   --->   "%select_ln210 = select i1 %icmp_ln210, i8 %low_t_load, i8 %high_t_load" [src/xf_colordetect_accel_stream.cpp:210]   --->   Operation 13 'select' 'select_ln210' <Predicate = true> <Delay = 0.44> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%zext_ln213 = zext i8 %select_ln210" [src/xf_colordetect_accel_stream.cpp:213]   --->   Operation 14 'zext' 'zext_ln213' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%write_ln213 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %t2, i32 %zext_ln213" [src/xf_colordetect_accel_stream.cpp:213]   --->   Operation 15 'write' 'write_ln213' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 16 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 5.37ns
+The critical path consists of the following:
+	fifo read on port 't1' (src/xf_colordetect_accel_stream.cpp:210) [6]  (3.4 ns)
+	'icmp' operation ('icmp_ln210', src/xf_colordetect_accel_stream.cpp:210) [7]  (1.97 ns)
+
+ <State 2>: 2.2ns
+The critical path consists of the following:
+	'load' operation ('low_t_load', src/xf_colordetect_accel_stream.cpp:213) on array 'low_t' [10]  (1.75 ns)
+	'select' operation ('select_ln210', src/xf_colordetect_accel_stream.cpp:210) [13]  (0.448 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,54 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'colordetect_accel'" level="0">
+<item name = "Date">Tue Mar 29 20:35:22 2022
+</item>
+<item name = "Version">2020.2.2 (Build 3118627 on Tue Feb  9 05:13:49 MST 2021)</item>
+<item name = "Project">colordetect</item>
+<item name = "Solution">colordetect (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.156 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">56, 8319416, 0.560 us, 83.194 ms, 14, 8319374, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_colorthresholding_9_0_3_2160_3840_1_s_fu_282">colorthresholding_9_0_3_2160_3840_1_s, 17, 8294418, 0.170 us, 82.944 ms, 12, 8294407, dataflow</column>
+<column name="grp_bgr2hsv_9_2160_3840_1_s_fu_294">bgr2hsv_9_2160_3840_1_s, 3, 8294412, 30.000 ns, 82.944 ms, 3, 8294412, none</column>
+<column name="grp_erode_0_0_2160_3840_0_3_3_1_1_11_fu_308">erode_0_0_2160_3840_0_3_3_1_1_11, 13, 8319373, 0.130 us, 83.194 ms, 13, 8319373, none</column>
+<column name="grp_dilate_0_0_2160_3840_0_3_3_1_1_12_fu_316">dilate_0_0_2160_3840_0_3_3_1_1_12, 13, 8319373, 0.130 us, 83.194 ms, 13, 8319373, none</column>
+<column name="grp_dilate_0_0_2160_3840_0_3_3_1_1_s_fu_324">dilate_0_0_2160_3840_0_3_3_1_1_s, 13, 8319373, 0.130 us, 83.194 ms, 13, 8319373, none</column>
+<column name="grp_erode_0_0_2160_3840_0_3_3_1_1_s_fu_332">erode_0_0_2160_3840_0_3_3_1_1_s, 13, 8319373, 0.130 us, 83.194 ms, 13, 8319373, none</column>
+<column name="grp_xfMat2axis_24_0_2160_3840_1_s_fu_340">xfMat2axis_24_0_2160_3840_1_s, 1, 8303041, 10.000 ns, 83.030 ms, 1, 8303041, none</column>
+<column name="grp_axis2xfMat_24_9_2160_3840_1_s_fu_361">axis2xfMat_24_9_2160_3840_1_s, 1, 8300881, 10.000 ns, 83.009 ms, 1, 8300881, none</column>
+<column name="call_ln0_Block_ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii_exit1_proc_fu_384">Block_ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii_exit1_proc, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

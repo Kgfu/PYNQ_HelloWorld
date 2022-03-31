@@ -1,0 +1,138 @@
+
+
+================================================================
+== Vitis HLS Report for 'Block_ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii_exit2_proc'
+================================================================
+* Date:           Wed Feb 23 11:16:18 2022
+
+* Version:        2020.2.2 (Build 3118627 on Tue Feb  9 05:13:49 MST 2021)
+* Project:        colordetect
+* Solution:       colordetect (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.802 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 0
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 6.80>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgOutput_cols_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 2 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgOutput_rows_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 3 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgHelper4_cols_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 4 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgHelper4_rows_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 5 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgHelper3_cols_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgHelper3_rows_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgHelper2_cols_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgHelper2_rows_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgHelper1_cols_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgHelper1_rows_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %rgb2hsv_cols_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %rgb2hsv_rows_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgInput_cols_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %imgInput_rows_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %cols, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %rows, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (3.40ns)   --->   "%rows_read = read i32 @_ssdm_op_Read.ap_fifo.i32P0A, i32 %rows" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:614]   --->   Operation 18 'read' 'rows_read' <Predicate = true> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 19 [1/1] (3.40ns)   --->   "%cols_read = read i32 @_ssdm_op_Read.ap_fifo.i32P0A, i32 %cols" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:615]   --->   Operation 19 'read' 'cols_read' <Predicate = true> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 20 [1/1] (3.40ns)   --->   "%write_ln614 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgInput_rows_out, i32 %rows_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:614]   --->   Operation 20 'write' 'write_ln614' <Predicate = true> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 21 [1/1] (3.40ns)   --->   "%write_ln615 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgInput_cols_out, i32 %cols_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:615]   --->   Operation 21 'write' 'write_ln615' <Predicate = true> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 22 [1/1] (3.40ns)   --->   "%write_ln614 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %rgb2hsv_rows_out, i32 %rows_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:614]   --->   Operation 22 'write' 'write_ln614' <Predicate = true> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 4> <FIFO>
+ST_1 : Operation 23 [1/1] (3.40ns)   --->   "%write_ln615 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %rgb2hsv_cols_out, i32 %cols_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:615]   --->   Operation 23 'write' 'write_ln615' <Predicate = true> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 4> <FIFO>
+ST_1 : Operation 24 [1/1] (3.36ns)   --->   "%write_ln614 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgHelper1_rows_out, i32 %rows_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:614]   --->   Operation 24 'write' 'write_ln614' <Predicate = true> <Delay = 3.36> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 5> <FIFO>
+ST_1 : Operation 25 [1/1] (3.36ns)   --->   "%write_ln615 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgHelper1_cols_out, i32 %cols_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:615]   --->   Operation 25 'write' 'write_ln615' <Predicate = true> <Delay = 3.36> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 5> <FIFO>
+ST_1 : Operation 26 [1/1] (3.32ns)   --->   "%write_ln614 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgHelper2_rows_out, i32 %rows_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:614]   --->   Operation 26 'write' 'write_ln614' <Predicate = true> <Delay = 3.32> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.32> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 6> <FIFO>
+ST_1 : Operation 27 [1/1] (3.32ns)   --->   "%write_ln615 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgHelper2_cols_out, i32 %cols_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:615]   --->   Operation 27 'write' 'write_ln615' <Predicate = true> <Delay = 3.32> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.32> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 6> <FIFO>
+ST_1 : Operation 28 [1/1] (3.28ns)   --->   "%write_ln614 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgHelper3_rows_out, i32 %rows_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:614]   --->   Operation 28 'write' 'write_ln614' <Predicate = true> <Delay = 3.28> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.28> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 7> <FIFO>
+ST_1 : Operation 29 [1/1] (3.28ns)   --->   "%write_ln615 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgHelper3_cols_out, i32 %cols_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:615]   --->   Operation 29 'write' 'write_ln615' <Predicate = true> <Delay = 3.28> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.28> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 7> <FIFO>
+ST_1 : Operation 30 [1/1] (3.24ns)   --->   "%write_ln614 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgHelper4_rows_out, i32 %rows_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:614]   --->   Operation 30 'write' 'write_ln614' <Predicate = true> <Delay = 3.24> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.24> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 31 [1/1] (3.24ns)   --->   "%write_ln615 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgHelper4_cols_out, i32 %cols_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:615]   --->   Operation 31 'write' 'write_ln615' <Predicate = true> <Delay = 3.24> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.24> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 32 [1/1] (3.26ns)   --->   "%write_ln614 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgOutput_rows_out, i32 %rows_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:614]   --->   Operation 32 'write' 'write_ln614' <Predicate = true> <Delay = 3.26> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.26> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 9> <FIFO>
+ST_1 : Operation 33 [1/1] (3.26ns)   --->   "%write_ln615 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %imgOutput_cols_out, i32 %cols_read" [/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:615]   --->   Operation 33 'write' 'write_ln615' <Predicate = true> <Delay = 3.26> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.26> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 9> <FIFO>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%ret_ln132 = ret" [src/xf_colordetect_accel_stream.cpp:132]   --->   Operation 34 'ret' 'ret_ln132' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 6.8ns
+The critical path consists of the following:
+	fifo read on port 'rows' (/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:614) [33]  (3.4 ns)
+	fifo write on port 'imgInput_rows_out' (/home/willychiang/Desktop/PYNQ-HelloWorld/boards/ip/vitis_lib/vision/L1/include/common/xf_structs.hpp:614) [35]  (3.4 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

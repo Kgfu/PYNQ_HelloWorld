@@ -1,0 +1,187 @@
+
+
+================================================================
+== Vitis HLS Report for 'Block_ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii_exit1_proc'
+================================================================
+* Date:           Tue Mar 29 20:35:23 2022
+
+* Version:        2020.2.2 (Build 3118627 on Tue Feb  9 05:13:49 MST 2021)
+* Project:        colordetect
+* Solution:       colordetect (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.401 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      1|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    144|    -|
+|Register         |        -|    -|       3|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|       3|    145|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   1|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   1|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------+----+-----------+-----+-----------+
+    |            Name           | LUT| Input Size| Bits| Total Bits|
+    +---------------------------+----+-----------+-----+-----------+
+    |ap_done                    |   9|          2|    1|          2|
+    |imgHelper1_cols_out_blk_n  |   9|          2|    1|          2|
+    |imgHelper1_rows_out_blk_n  |   9|          2|    1|          2|
+    |imgHelper2_cols_out_blk_n  |   9|          2|    1|          2|
+    |imgHelper2_rows_out_blk_n  |   9|          2|    1|          2|
+    |imgHelper3_cols_out_blk_n  |   9|          2|    1|          2|
+    |imgHelper3_rows_out_blk_n  |   9|          2|    1|          2|
+    |imgHelper4_cols_out_blk_n  |   9|          2|    1|          2|
+    |imgHelper4_rows_out_blk_n  |   9|          2|    1|          2|
+    |imgInput_cols_out_blk_n    |   9|          2|    1|          2|
+    |imgInput_rows_out_blk_n    |   9|          2|    1|          2|
+    |imgOutput_cols_out_blk_n   |   9|          2|    1|          2|
+    |imgOutput_rows_out_blk_n   |   9|          2|    1|          2|
+    |real_start                 |   9|          2|    1|          2|
+    |rgb2hsv_cols_out_blk_n     |   9|          2|    1|          2|
+    |rgb2hsv_rows_out_blk_n     |   9|          2|    1|          2|
+    +---------------------------+----+-----------+-----+-----------+
+    |Total                      | 144|         32|   16|         32|
+    +---------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------+---+----+-----+-----------+
+    |      Name      | FF| LUT| Bits| Const Bits|
+    +----------------+---+----+-----+-----------+
+    |ap_CS_fsm       |  1|   0|    1|          0|
+    |ap_done_reg     |  1|   0|    1|          0|
+    |start_once_reg  |  1|   0|    1|          0|
+    +----------------+---+----+-----+-----------+
+    |Total           |  3|   0|    3|          0|
+    +----------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+-----------------------------------------------------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |                          Source Object                          |    C Type    |
++----------------------------+-----+-----+------------+-----------------------------------------------------------------+--------------+
+|ap_clk                      |   in|    1|  ap_ctrl_hs|  Block__ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii.exit1_proc|  return value|
+|ap_rst                      |   in|    1|  ap_ctrl_hs|  Block__ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii.exit1_proc|  return value|
+|ap_start                    |   in|    1|  ap_ctrl_hs|  Block__ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii.exit1_proc|  return value|
+|start_full_n                |   in|    1|  ap_ctrl_hs|  Block__ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii.exit1_proc|  return value|
+|ap_done                     |  out|    1|  ap_ctrl_hs|  Block__ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii.exit1_proc|  return value|
+|ap_continue                 |   in|    1|  ap_ctrl_hs|  Block__ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii.exit1_proc|  return value|
+|ap_idle                     |  out|    1|  ap_ctrl_hs|  Block__ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii.exit1_proc|  return value|
+|ap_ready                    |  out|    1|  ap_ctrl_hs|  Block__ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii.exit1_proc|  return value|
+|start_out                   |  out|    1|  ap_ctrl_hs|  Block__ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii.exit1_proc|  return value|
+|start_write                 |  out|    1|  ap_ctrl_hs|  Block__ZN2xf2cv3MatILi9ELi2160ELi3840ELi1ELi2EEC2Eii.exit1_proc|  return value|
+|rows                        |   in|   32|     ap_none|                                                             rows|        scalar|
+|cols                        |   in|   32|     ap_none|                                                             cols|        scalar|
+|imgInput_rows_out_din       |  out|   32|     ap_fifo|                                                imgInput_rows_out|       pointer|
+|imgInput_rows_out_full_n    |   in|    1|     ap_fifo|                                                imgInput_rows_out|       pointer|
+|imgInput_rows_out_write     |  out|    1|     ap_fifo|                                                imgInput_rows_out|       pointer|
+|imgInput_cols_out_din       |  out|   32|     ap_fifo|                                                imgInput_cols_out|       pointer|
+|imgInput_cols_out_full_n    |   in|    1|     ap_fifo|                                                imgInput_cols_out|       pointer|
+|imgInput_cols_out_write     |  out|    1|     ap_fifo|                                                imgInput_cols_out|       pointer|
+|rgb2hsv_rows_out_din        |  out|   32|     ap_fifo|                                                 rgb2hsv_rows_out|       pointer|
+|rgb2hsv_rows_out_full_n     |   in|    1|     ap_fifo|                                                 rgb2hsv_rows_out|       pointer|
+|rgb2hsv_rows_out_write      |  out|    1|     ap_fifo|                                                 rgb2hsv_rows_out|       pointer|
+|rgb2hsv_cols_out_din        |  out|   32|     ap_fifo|                                                 rgb2hsv_cols_out|       pointer|
+|rgb2hsv_cols_out_full_n     |   in|    1|     ap_fifo|                                                 rgb2hsv_cols_out|       pointer|
+|rgb2hsv_cols_out_write      |  out|    1|     ap_fifo|                                                 rgb2hsv_cols_out|       pointer|
+|imgHelper1_rows_out_din     |  out|   32|     ap_fifo|                                              imgHelper1_rows_out|       pointer|
+|imgHelper1_rows_out_full_n  |   in|    1|     ap_fifo|                                              imgHelper1_rows_out|       pointer|
+|imgHelper1_rows_out_write   |  out|    1|     ap_fifo|                                              imgHelper1_rows_out|       pointer|
+|imgHelper1_cols_out_din     |  out|   32|     ap_fifo|                                              imgHelper1_cols_out|       pointer|
+|imgHelper1_cols_out_full_n  |   in|    1|     ap_fifo|                                              imgHelper1_cols_out|       pointer|
+|imgHelper1_cols_out_write   |  out|    1|     ap_fifo|                                              imgHelper1_cols_out|       pointer|
+|imgHelper2_rows_out_din     |  out|   32|     ap_fifo|                                              imgHelper2_rows_out|       pointer|
+|imgHelper2_rows_out_full_n  |   in|    1|     ap_fifo|                                              imgHelper2_rows_out|       pointer|
+|imgHelper2_rows_out_write   |  out|    1|     ap_fifo|                                              imgHelper2_rows_out|       pointer|
+|imgHelper2_cols_out_din     |  out|   32|     ap_fifo|                                              imgHelper2_cols_out|       pointer|
+|imgHelper2_cols_out_full_n  |   in|    1|     ap_fifo|                                              imgHelper2_cols_out|       pointer|
+|imgHelper2_cols_out_write   |  out|    1|     ap_fifo|                                              imgHelper2_cols_out|       pointer|
+|imgHelper3_rows_out_din     |  out|   32|     ap_fifo|                                              imgHelper3_rows_out|       pointer|
+|imgHelper3_rows_out_full_n  |   in|    1|     ap_fifo|                                              imgHelper3_rows_out|       pointer|
+|imgHelper3_rows_out_write   |  out|    1|     ap_fifo|                                              imgHelper3_rows_out|       pointer|
+|imgHelper3_cols_out_din     |  out|   32|     ap_fifo|                                              imgHelper3_cols_out|       pointer|
+|imgHelper3_cols_out_full_n  |   in|    1|     ap_fifo|                                              imgHelper3_cols_out|       pointer|
+|imgHelper3_cols_out_write   |  out|    1|     ap_fifo|                                              imgHelper3_cols_out|       pointer|
+|imgHelper4_rows_out_din     |  out|   32|     ap_fifo|                                              imgHelper4_rows_out|       pointer|
+|imgHelper4_rows_out_full_n  |   in|    1|     ap_fifo|                                              imgHelper4_rows_out|       pointer|
+|imgHelper4_rows_out_write   |  out|    1|     ap_fifo|                                              imgHelper4_rows_out|       pointer|
+|imgHelper4_cols_out_din     |  out|   32|     ap_fifo|                                              imgHelper4_cols_out|       pointer|
+|imgHelper4_cols_out_full_n  |   in|    1|     ap_fifo|                                              imgHelper4_cols_out|       pointer|
+|imgHelper4_cols_out_write   |  out|    1|     ap_fifo|                                              imgHelper4_cols_out|       pointer|
+|imgOutput_rows_out_din      |  out|   32|     ap_fifo|                                               imgOutput_rows_out|       pointer|
+|imgOutput_rows_out_full_n   |   in|    1|     ap_fifo|                                               imgOutput_rows_out|       pointer|
+|imgOutput_rows_out_write    |  out|    1|     ap_fifo|                                               imgOutput_rows_out|       pointer|
+|imgOutput_cols_out_din      |  out|   32|     ap_fifo|                                               imgOutput_cols_out|       pointer|
+|imgOutput_cols_out_full_n   |   in|    1|     ap_fifo|                                               imgOutput_cols_out|       pointer|
+|imgOutput_cols_out_write    |  out|    1|     ap_fifo|                                               imgOutput_cols_out|       pointer|
++----------------------------+-----+-----+------------+-----------------------------------------------------------------+--------------+
+
